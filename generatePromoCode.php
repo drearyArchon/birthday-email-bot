@@ -17,24 +17,6 @@ if ($conn->connect_error){
 }
 echo "Connected successfully\n";
 
-// $sql_query = "SELECT `promo_id`, `customer_id`, `promo_code`, `expiration_date` FROM `active_birthday_promo_codes`";
-// if ($result = $conn->query($sql_query)){
-//  if ($result->num_rows > 0) {
-//    // output data of each row
-//    while($row = $result->fetch_assoc()) {
-//      echo "promo_id: " . $row["promo_id"]. "<br>";
-//      echo "customer_id: " . $row["customer_id"]. "<br>";
-//      echo "promo_code: " . $row["promo_code"]. "<br>";
-//      echo "expiration_date: " . $row["expiration_date"]. "<br>";
-//    }
-//  } else {
-//    echo "0 results";
-//  }
-//} else {
-//  echo "query failed";
-//}
-
-
 
 // prepare and bind
 $insert = "INSERT INTO `active_birthday_promo_codes` (`customer_id`, `promo_code`) VALUES (?, ?)";

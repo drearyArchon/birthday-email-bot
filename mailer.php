@@ -16,16 +16,46 @@ $phpmailer = new PHPMailer(TRUE);
 #  Host: smtp.mailtrap.io
 # Port: 25 or 465 or 587 or 2525
 
+$servername = "localhost";
+$username = "birthday_bot";
+$password = "happybirthday";
+$dbname = "sayakaya_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error){
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully\n";
+
+// $sql_query = "SELECT `customer_id`, `name`, `birthday_date`, `email` FROM `customers`";
+// if ($result = $conn->query($sql_query)){
+//  if ($result->num_rows > 0) {
+//    // output data of each row
+//    while($row = $result->fetch_assoc()) {
+//      echo "customer_id: " . $row["customer_id"]. "<br>";
+//      echo "name: " . $row["name"]. "<br>";
+//      echo "birthday_date: " . $row["birthday_date"]. "<br>";
+//      echo "email: " . $row["email"]. "<br>";
+//    }
+//  } else {
+//    echo "0 results";
+//  }
+//} else {
+//  echo "query failed";
+//}
+
 try {
    /* Set the mail sender. */
-   
    $phpmailer->setFrom('darth@empire.com', 'Darth Vader');
    /* Add a recipient. */
    $phpmailer->addAddress('ravalvaliandi@gmail.com', 'Muhammad Ravid Valiandi');
    /* Set the subject. */
-   $phpmailer->Subject = 'Force';
+   $phpmailer->Subject = 'Happy Birthday ' . $name . '! Here`s a small gift from us to you!';
    /* Set the mail message body. */
-   $phpmailer->Body = 'There is a great disturbance in the Force.';
+   $phpmailer->Body = 'Use promo code randomcode on our website for 10% on your purchase today!';
    /* Finally send the mail. */
 
    $phpmailer->isSMTP();
