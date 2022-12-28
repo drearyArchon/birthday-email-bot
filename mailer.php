@@ -17,33 +17,33 @@ $phpmailer = new PHPMailer(TRUE);
 # Port: 25 or 465 or 587 or 2525
 
 try {
-    /* Set the mail sender. */
-    
-    $phpmailer->setFrom('darth@empire.com', 'Darth Vader');
-    /* Add a recipient. */
-    $phpmailer->addAddress('ravalvaliandi@gmail.com', 'Muhammad Ravid Valiandi');
-    /* Set the subject. */
-    $phpmailer->Subject = 'Force';
-    /* Set the mail message body. */
-    $phpmailer->Body = 'There is a great disturbance in the Force.';
-    /* Finally send the mail. */
+   /* Set the mail sender. */
+   
+   $phpmailer->setFrom('darth@empire.com', 'Darth Vader');
+   /* Add a recipient. */
+   $phpmailer->addAddress('ravalvaliandi@gmail.com', 'Muhammad Ravid Valiandi');
+   /* Set the subject. */
+   $phpmailer->Subject = 'Force';
+   /* Set the mail message body. */
+   $phpmailer->Body = 'There is a great disturbance in the Force.';
+   /* Finally send the mail. */
 
-    $phpmailer->isSMTP();
-    $phpmailer->Host = 'smtp.mailtrap.io';
-    $phpmailer->SMTPAuth = true;
-    $phpmailer->Port = 2525;
-    $phpmailer->Username = '63f67137c0dace';
-    $phpmailer->Password = 'b18de358f3bb9f';
-    $phpmailer->send();
+   $phpmailer->isSMTP();
+   $phpmailer->Host = 'smtp.mailtrap.io';
+   $phpmailer->SMTPAuth = true;
+   $phpmailer->Port = 2525;
+   $phpmailer->Username = '63f67137c0dace';
+   $phpmailer->Password = 'b18de358f3bb9f';
+   $phpmailer->send();
 }
 catch (Exception $e)
 {
    /* PHPMailer exception. */
-    echo $e->errorMessage();
+   echo $e->errorMessage();
 }
 catch (\Exception $e)
 {
    /* PHP exception (note the backslash to select the global namespace Exception class). */
-    echo $e->getMessage();
+   echo $e->getMessage();
 }
 ?>
